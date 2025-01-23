@@ -50,6 +50,8 @@ async def main():
                     url_list.append(item['url'].split('/issues/', 1)[0])
             
             url_list = list(set(url_list))
+            with open('url_list.txt', 'a') as f:
+                f.write('\n'.join(url_list))
             for url in url_list:
                 print(url)
         else:
